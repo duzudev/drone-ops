@@ -1,9 +1,35 @@
-<div class="container mt-4">
-  <h1 class="display-4"><%= @project.name %></h1>
-  <p><strong>Description:</strong> <%= @project.description %></p>
-  <p><strong>Start Date:</strong> <%= @project.start_date %></p>
-  <p><strong>End Date:</strong> <%= @project.end_date %></p>
-  <p><strong>Status:</strong> <%= @project.status %></p>
-  <%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-warning' %>
-  <%= link_to 'Back', projects_path, class: 'btn btn-secondary' %>
+<div class="container mt-4" data-project-id="<%= @project.id %>"> <!-- Add data attribute here -->
+  <h1 class="display-6 text-center"><%= @project.name %></h1>
+
+  <table class="table table-bordered table-sm">
+    <thead>
+      <tr>
+        <th class="text-nowrap">Description</th>
+        <th class="text-nowrap">Start Date</th>
+        <th class="text-nowrap">End Date</th>
+        <th class="text-nowrap">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="align-middle"><%= @project.description %></td>
+        <td class="align-middle"><%= @project.start_date.strftime("%Y-%m-%d") if @project.start_date %></td>
+        <td class="align-middle"><%= @project.end_date.strftime("%Y-%m-%d") if @project.end_date %></td>
+        <td class="align-middle"><%= @project.status %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center mt-4 py-5">
+    <div class="btn-group" role="group" aria-label="Project Sections">
+      <button type="button" class="btn btn-outline-secondary load-section" data-section="bookings">Bookings</button>
+      <button type="button" class="btn btn-outline-secondary load-section" data-section="records">Records</button>
+      <button type="button" class="btn btn-outline-secondary load-section" data-section="crew">Crew</button>
+      <button type="button" class="btn btn-outline-secondary load-section" data-section="compliance">Project Compliance</button>
+    </div>
+  </div>
+
+  <div id="section-content" class="mt-4">
+    <!-- Dynamic content will be loaded here -->
+  </div>
 </div>

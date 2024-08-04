@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :set_project, only: [:show, :edit, :update, :destroy, :load_section]
 
   def index
     @projects = Project.all
@@ -35,6 +35,15 @@ class ProjectsController < ApplicationController
   def destroy
     @project.destroy
     redirect_to projects_path, notice: 'Project was successfully deleted.'
+  end
+
+  def load_section
+    @section = params[:section]
+
+    respond_to do |format|
+      format.js # This will render load_section.js.erb
+      # render partial: "projects/#{@section}"
+    end
   end
 
   private

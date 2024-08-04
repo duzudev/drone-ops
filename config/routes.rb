@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: 'users/registrations' }
-  resources :projects  # Add this line to create RESTful routes for projects
+  resources :projects do
+    member do
+      get 'load_section'
+    end
+  end
+
   get 'lms/index'
   get 'compliance/index'
   get 'dashboard/index'
