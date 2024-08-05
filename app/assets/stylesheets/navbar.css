@@ -1,0 +1,64 @@
+/* app/assets/stylesheets/navbar.css.scss */
+
+/* Navbar styles */
+.navbar {
+    background-color: #F2F4F8; /* Light background */
+    border-bottom: 1px solid #B3B3B3; /* Light gray border */
+  }
+  
+  /* Brand logo styles */
+  .navbar-brand img {
+    height: 30px; /* Slightly larger logo */
+  }
+  
+  /* Navbar link styles */
+  .nav-link {
+    color: #4E94F2; /* Primary Blue */
+    margin: 0 15px; /* Space between links */
+    transition: color 0.3s; /* Transition effect */
+  }
+  
+  .nav-link:hover {
+    color: #3C7CBE; /* Darker shade on hover */
+  }
+  
+  /* Active link styles */
+  .nav-link.active {
+    font-weight: bold; /* Bold for active links */
+    color: #2B2D42; /* Dark gray for active state */
+  }
+  
+  /* Dropdown menu styles */
+  .dropdown-menu {
+    background-color: #F2F4F8; /* Light background */
+    border: 1px solid #B3B3B3; /* Light gray border */
+  }
+  
+  /* Dropdown item styles */
+  .dropdown-item {
+    color: #4E94F2; /* Primary Blue */
+    transition: background-color 0.3s; /* Transition effect */
+  }
+  
+  .dropdown-item:hover {
+    background-color: #E0E0E0; /* Light gray on hover */
+  }
+  
+  /* Button styles */
+  .btn-link {
+    color: #4E94F2; /* Primary Blue */
+  }
+  
+  .btn-primary {
+    background-color: #4E94F2; /* Primary Blue */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+  }
+  
+  .btn-primary:hover {
+    background-color: #3C7CBE; /* Darker shade on hover */
+  }
+
+  .register-btn:hover {
+    color: rgb(16, 140, 235)
+  }

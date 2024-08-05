@@ -1,25 +1,32 @@
-<h3>Edit Password</h3>
+<div class="container-fluid d-flex justify-content-center align-items-center" style="height: 75vh; padding-top: 56px;"> <!-- Adjust padding for navbar height -->
+  <div class="col-12 col-md-4" style="padding: 30px; border-radius: 5px; background-color: #f8f9fa;">
+    <h3 class="text-center mb-4">Edit Password</h3>
 
     <%= form_with model: Current.user, url: edit_password_path do |form| %>
-    <% if form.object.errors.any? %>
-        <div class="alert alert-danger">
-        <%= form.object.errors.full_messages.each do |message| %>
-            <div><%= message %> </div>
-        <% end %>
+      <% if Current.user.errors.any? %> <!-- Check for errors on the Current.user object -->
+        <div class="alert alert-danger mb-4"> <!-- Added margin-bottom for spacing -->
+          <h6 class="mb-0"><%= pluralize(Current.user.errors.count, "error") %> prohibited this password from being updated:</h6>
+          <div>
+            <%= Current.user.errors.full_messages.each do |message| %>
+              <div><%= message %></div>
+            <% end %>
+          </div>
         </div>
-        <% end %>
+      <% end %>
 
-
-        <div class="mb-3">
-            <%= form.label :password%>
-            <%= form.password_field :password, class: "form-control", placeholder: "password"%>
-        </div>
-        <div class="mb-3">
-            <%= form.label :password_confirmation%>
-            <%= form.password_field :password_confirmation, class: "form-control", placeholder: "password"%>
-        </div>
-        <div class="mb-3">
-            <%= form.submit "Update Password", class: "btn btn-primary"%>
-        </div>
-
-    <%end%>
+      <div class="mb-4"> <!-- Increased margin -->
+        <%= form.label :password, class: "form-label" %>
+        <%= form.password_field :password, class: "form-control", placeholder: "Enter new password" %>
+      </div>
+      
+      <div class="mb-4"> <!-- Increased margin -->
+        <%= form.label :password_confirmation, class: "form-label" %>
+        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Confirm new password" %>
+      </div>
+      
+      <div class="mb-4"> <!-- Increased margin -->
+        <%= form.submit "Update Password", class: "btn btn-primary w-100" %>
+      </div>
+    <% end %>
+  </div>
+</div>

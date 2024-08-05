@@ -3,6 +3,7 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @project = Project.new
   end
 
   def show
@@ -33,6 +34,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
+    @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_path, notice: 'Project was successfully deleted.'
   end

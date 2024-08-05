@@ -1,0 +1,38 @@
+body {
+    background-color: #F2F4F8; /* Light gray background */
+  }
+  
+  .container {
+    margin-top: 100px; /* Add space for the fixed navbar */
+  }
+  
+  .alert {
+    margin-bottom: 20px; /* Space between alerts and content */
+  }
+  
+  h1, h2, h3, h4 {
+    color: #2B2D42; /* Dark gray color for headings */
+  }
+  
+  .navbar {
+    background-color: #F2F4F8; /* Light background for navbar */
+    border-bottom: 1px solid #B3B3B3; /* Light gray border */
+  }
+  
+  .nav-link {
+    color: #4E94F2; /* Primary Blue */
+  }
+  
+  .nav-link:hover {
+    color: #3C7CBE; /* Darker blue on hover */
+  }
+  
+  .btn-primary {
+    background-color: #4E94F2; /* Primary Blue */
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #3C7CBE; /* Darker shade on hover */
+  }
+  

@@ -1,66 +1,67 @@
+<%# Add this line at the top of the file %>
+<%= stylesheet_link_tag "dashboard", "data-turbo-track": "reload" %>
+
 <div class="container mt-4 pb-5">
-
-
   <h1 class="display-4 text-center">Dashboard</h1>
   <p class="lead text-center">Overview of key metrics and activities.</p>
 
-  <div class="row mt-4 d-flex justify-content-between">
-    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
-      <div class="card w-100 project-card">
-        <div class="card-body">
+  <div class="row mt-4 g-4">
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+      <div class="card w-100 project-card shadow-sm border-light"> <!-- Added border-light -->
+        <div class="card-body p-card">
           <h5 class="card-title">Active Projects</h5>
           <p class="card-text">You have <strong>3 active projects</strong> currently ongoing.</p>
-          <%= link_to 'View Projects', projects_path, class: 'btn btn-success' %> <!-- Replace with the correct path -->
+          <%= link_to 'View Projects', projects_path, class: 'btn btn-success' %>
         </div>
       </div>
     </div>
 
-    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
-      <div class="card w-100 project-card">
-        <div class="card-body">
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+      <div class="card w-100 project-card shadow-sm border-light">
+        <div class="card-body p-card">
           <h5 class="card-title">Upcoming Deadlines</h5>
           <p class="card-text">You have <strong>2 upcoming deadlines</strong> this week.</p>
-          <%= link_to 'Check Deadlines', '#', class: 'btn btn-warning' %> <!-- Replace with the correct path -->
+          <%= link_to 'Check Deadlines', '#', class: 'btn btn-warning' %>
         </div>
       </div>
     </div>
 
-    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
-      <div class="card w-100 project-card">
-        <div class="card-body">
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+      <div class="card w-100 project-card shadow-sm border-light">
+        <div class="card-body p-card">
           <h5 class="card-title">Total Flight Hours</h5>
           <p class="card-text">You have logged a total of <strong class='text-success'>+120 flight hours</strong>.</p>
-          <%= link_to 'View Logbook', '#', class: 'btn btn-outline-primary' %> <!-- Replace with the correct path -->
+          <%= link_to 'View Logbook', '#', class: 'btn btn-outline-primary' %>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="row mt-4">
-    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
-      <div class="card w-100 project-card">
+  <div class="row mt-4 g-4">
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+      <div class="card w-100 project-card shadow-sm border-light">
         <div class="card-body">
           <h5 class="card-title">Recent Activities</h5>
-          <ul class="list-group">
-            <li class="list-group-item background-highlight">Project Alpha updated on 2024-08-01</li>
-            <li class="list-group-item background-highlight">Flight operation completed on 2024-08-02</li>
-            <li class="list-group-item background-highlight">New project created: Project Beta on 2024-08-03</li>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item p-card">Project Alpha updated on 2024-08-01</li>
+            <li class="list-group-item p-card">Flight operation completed on 2024-08-02</li>
+            <li class="list-group-item p-card">New project created: Project Beta on 2024-08-03</li>
           </ul>
-          <%= link_to 'View All Activities', '#', class: 'btn btn-outline-primary mt-2' %> <!-- Replace with the correct path -->
+          <%= link_to 'View All Activities', '#', class: 'btn btn-outline-primary mt-2' %>
         </div>
       </div>
     </div>
 
-    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
-      <div class="card w-100 project-card">
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+      <div class="card w-100 project-card shadow-sm border-light">
         <div class="card-body">
           <h5 class="card-title">Recent Activities</h5>
-          <ul class="list-group">
-            <li class="list-group-item background-highlight">Project Alpha updated on 2024-08-01</li>
-            <li class="list-group-item background-highlight">Flight operation completed on 2024-08-02</li>
-            <li class="list-group-item background-highlight">New project created: Project Beta on 2024-08-03</li>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item p-card">Project Alpha updated on 2024-08-01</li>
+            <li class="list-group-item p-card">Flight operation completed on 2024-08-02</li>
+            <li class="list-group-item p-card">New project created: Project Beta on 2024-08-03</li>
           </ul>
-          <%= link_to 'View All Activities', '#', class: 'btn btn-outline-primary mt-2' %> <!-- Replace with the correct path -->
+          <%= link_to 'View All Activities', '#', class: 'btn btn-outline-primary mt-2' %>
         </div>
       </div>
     </div>

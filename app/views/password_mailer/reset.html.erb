@@ -1,8 +1,11 @@
-Hi <%= params[:user].email %>,
+<div class="container mt-4">
+  <p class="h5">Hi <%= params[:user].email %>,</p>
 
-Someone requested a reset of your password.
+  <p>Someone requested a reset of your password.</p>
 
-If this was you, click the link to reset your password.
-The link will expire automatically in 15 minutes
+  <p>If this was you, click the link below to reset your password. The link will expire automatically in 15 minutes:</p>
 
-<%= link_to "Reset Password", password_reset_edit_url(token: @token) %>
+  <div class="mt-3">
+    <%= link_to "Reset Password", password_reset_edit_url(token: @token), class: "btn btn-primary" %>
+  </div>
+</div>

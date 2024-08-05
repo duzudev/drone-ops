@@ -1,7 +1,7 @@
-<%= form_with model: @project, local: true do |form| %>
+<%= form_with(model: @project, local: true )do |form| %>
   <% if @project.errors.any? %>
     <div class="alert alert-danger">
-      <h4><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h4>
+      <h4 class="alert-heading"><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h4>
       <ul>
         <% @project.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -10,31 +10,33 @@
     </div>
   <% end %>
 
-  <div class="form-group">
-    <%= form.label :name %>
+  <div class="mb-3"> <!-- Updated to mb-3 for Bootstrap 5 spacing -->
+    <%= form.label :name, class: 'form-label' %> <!-- Added class for labels -->
     <%= form.text_field :name, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :description %>
+  <div class="mb-3">
+    <%= form.label :description, class: 'form-label' %>
     <%= form.text_area :description, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :start_date %>
+  <div class="mb-3">
+    <%= form.label :start_date, class: 'form-label' %>
     <%= form.date_select :start_date, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :end_date %>
+  <div class="mb-3">
+    <%= form.label :end_date, class: 'form-label' %>
     <%= form.date_select :end_date, class: 'form-control' %>
   </div>
 
-  <div class="form-group">
-    <%= form.label :status %>
-    <%= form.select :status, ['Active', 'Completed', 'Inactive'], { include_blank: true }, class: 'form-control' %>
+  <div class="mb-3">
+    <%= form.label :status, class: 'form-label' %>
+    <%= form.select :status, ['Active', 'Completed', 'Inactive'], { include_blank: true }, class: 'form-select' %> <!-- Changed to form-select for better styling -->
   </div>
 
-  <%= form.submit class: 'btn btn-primary' %>
-  <%= link_to 'Cancel', projects_path, class: 'btn btn-secondary' %>
+  <div class="d-flex justify-content-between"> <!-- Added flex to align buttons -->
+    <%= form.submit class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', projects_path, class: 'btn btn-secondary' %>
+  </div>
 <% end %>
