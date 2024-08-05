@@ -1,50 +1,66 @@
 <div class="container mt-4 pb-5">
+
+
   <h1 class="display-4 text-center">Dashboard</h1>
   <p class="lead text-center">Overview of key metrics and activities.</p>
 
-  <div class="row mt-4">
-    <div class="col-md-4">
-      <div class="card">
+  <div class="row mt-4 d-flex justify-content-between">
+    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
+      <div class="card w-100 project-card">
         <div class="card-body">
           <h5 class="card-title">Active Projects</h5>
           <p class="card-text">You have <strong>3 active projects</strong> currently ongoing.</p>
-          <a href="#" class="btn btn-success">View Projects</a>
+          <%= link_to 'View Projects', projects_path, class: 'btn btn-success' %> <!-- Replace with the correct path -->
         </div>
       </div>
     </div>
 
-    <div class="col-md-4">
-      <div class="card">
+    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
+      <div class="card w-100 project-card">
         <div class="card-body">
           <h5 class="card-title">Upcoming Deadlines</h5>
           <p class="card-text">You have <strong>2 upcoming deadlines</strong> this week.</p>
-          <a href="#" class="btn btn-warning">Check Deadlines</a>
+          <%= link_to 'Check Deadlines', '#', class: 'btn btn-warning' %> <!-- Replace with the correct path -->
         </div>
       </div>
     </div>
 
-    <div class="col-md-4">
-      <div class="card">
+    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
+      <div class="card w-100 project-card">
         <div class="card-body">
           <h5 class="card-title">Total Flight Hours</h5>
           <p class="card-text">You have logged a total of <strong class='text-success'>+120 flight hours</strong>.</p>
-          <a href="#" class="btn btn-outline-primary">View Logbook</a>
+          <%= link_to 'View Logbook', '#', class: 'btn btn-outline-primary' %> <!-- Replace with the correct path -->
         </div>
       </div>
     </div>
   </div>
 
   <div class="row mt-4">
-    <div class="col-md-12">
-      <div class="card">
+    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
+      <div class="card w-100 project-card">
         <div class="card-body">
           <h5 class="card-title">Recent Activities</h5>
           <ul class="list-group">
-            <li class="list-group-item">Project Alpha updated on 2024-08-01</li>
-            <li class="list-group-item">Flight operation completed on 2024-08-02</li>
-            <li class="list-group-item">New project created: Project Beta on 2024-08-03</li>
+            <li class="list-group-item background-highlight">Project Alpha updated on 2024-08-01</li>
+            <li class="list-group-item background-highlight">Flight operation completed on 2024-08-02</li>
+            <li class="list-group-item background-highlight">New project created: Project Beta on 2024-08-03</li>
           </ul>
-          <a href="#" class="btn btn-outline-primary mt-2">View All Activities</a>
+          <%= link_to 'View All Activities', '#', class: 'btn btn-outline-primary mt-2' %> <!-- Replace with the correct path -->
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
+      <div class="card w-100 project-card">
+        <div class="card-body">
+          <h5 class="card-title">Recent Activities</h5>
+          <ul class="list-group">
+            <li class="list-group-item background-highlight">Project Alpha updated on 2024-08-01</li>
+            <li class="list-group-item background-highlight">Flight operation completed on 2024-08-02</li>
+            <li class="list-group-item background-highlight">New project created: Project Beta on 2024-08-03</li>
+          </ul>
+          <%= link_to 'View All Activities', '#', class: 'btn btn-outline-primary mt-2' %> <!-- Replace with the correct path -->
         </div>
       </div>
     </div>

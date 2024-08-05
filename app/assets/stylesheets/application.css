@@ -14,7 +14,75 @@
  *= require_self
  */
 
- .table td {
-    padding: 0.5rem; /* Add some padding */
+ /* application.css */
+
+/* application.css */
+/* application.css */
+
+/* Application-wide styles */
+.table td {
+  padding: 0.5rem; /* Add some padding */
+}
+
+.table-header th {
+  background-color: #d5d7db; /* Light gray background for table headers */
+}
+
+/* Dropdown toggle styles */
+.dropdown-toggle {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit the color from parent, remove blue color */
+}
+
+.dropdown-toggle:hover {
+  color: inherit; /* Maintain color on hover */
+}
+
+/* Navbar link styles */
+.nav-link {
+  color: #333; /* Default link color */
+  transition: color 0.3s; /* Smooth color transition */
+  display: flex; /* Ensures proper alignment */
+  align-items: center; /* Center vertically */
+}
+
+.nav-item.active .nav-link {
+  color: #0056b3; /* Darker color for active link */
+}
+
+.nav-item.active .nav-link:hover {
+  text-decoration: none; /* Remove underline on hover for active link */
+}
+
+.nav-link:hover {
+  color: #0056b3; /* Darker color on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-nav {
+    text-align: center; /* Center text on mobile */
   }
-  
+
+  .nav-item {
+    width: 100%; /* Full width for nav items on mobile */
+  }
+
+  .dropdown-menu {
+    text-align: center; /* Center dropdown menu items */
+  }
+}
+
+.project-card {
+  transition: border-color 0.3s ease;
+}
+
+.project-card:hover {
+  border-color: #443c4e; /* Change to your desired hover color */
+  cursor: pointer;
+}
+.background-highlight:hover {
+  background-color: #fafafa;
+  cursor: pointer;
+
+}

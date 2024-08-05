@@ -1,15 +1,18 @@
 <div class="container mt-4" data-project-id="<%= @project.id %>"> <!-- Add data attribute here -->
   <h1 class="display-6 text-center"><%= @project.name %></h1>
 
-  <table class="table table-bordered table-sm">
+
+  
+  <%# <table class="table table-bordered table-sm">
     <thead>
-      <tr>
+      <tr class="table-header"> <!-- Add a custom class for styling -->
         <th class="text-nowrap">Description</th>
         <th class="text-nowrap">Start Date</th>
         <th class="text-nowrap">End Date</th>
         <th class="text-nowrap">Status</th>
       </tr>
-    </thead>
+    </thead> %>
+    <!--
     <tbody>
       <tr>
         <td class="align-middle"><%= @project.description %></td>
@@ -19,8 +22,9 @@
       </tr>
     </tbody>
   </table>
+    -->
 
-  <div class="d-flex justify-content-center mt-4 py-5">
+  <div class="d-flex justify-content-center mt-1 py-2">
     <div class="btn-group" role="group" aria-label="Project Sections">
       <button type="button" class="btn btn-outline-secondary load-section" data-section="bookings">Bookings</button>
       <button type="button" class="btn btn-outline-secondary load-section" data-section="records">Records</button>
