@@ -1,16 +1,38 @@
-<div class="container mt-4" data-project-id="<%= @project.id %>"> <!-- Add data attribute here -->
+<div class="container mt-4" 
+     data-controller="project-section" 
+     data-project-id="<%= @project.id %>"
+     data-action="turbo:load->project-section#connect">
   <h1 class="display-6 text-center"><%= @project.name %></h1>
 
   <div class="d-flex justify-content-center mt-1 py-2">
-    <div class="btn-group" role="group" aria-label="Project Sections">
-      <button type="button" class="btn btn-outline-secondary load-section" data-section="bookings">Bookings</button>
-      <button type="button" class="btn btn-outline-secondary load-section" data-section="records">Records</button>
-      <button type="button" class="btn btn-outline-secondary load-section" data-section="crew">Crew</button>
-      <button type="button" class="btn btn-outline-secondary load-section" data-section="compliance">Project Compliance</button>
+    <div class="btn-group d-none d-md-flex" role="group" aria-label="Project Sections">
+      <% %w[bookings records crew compliance].each do |section| %>
+        <button type="button" 
+                class="btn <%= @active_section == section ? 'btn-secondary' : 'btn-outline-secondary' %> load-section" 
+                data-section="<%= section %>" 
+                data-action="click->project-section#loadSection">
+          <%= section.capitalize %>
+        </button>
+      <% end %>
     </div>
+    <!-- ... (dropdown for mobile remains unchanged) ... -->
   </div>
 
-  <div id="section-content" class="mt-4">
-    <!-- Dynamic content will be loaded here -->
+  <div id="section-content" data-project-section-target="content">
+    <%= render partial: "projects/sections/#{@active_section}" %>
+    <!-- Debug output -->
+    <div class="mt-3 p-3 bg-light">
+      <h4>Debug Information:</h4>
+      <p>Current section: <%= @active_section %></p>
+      <p>Project ID: <%= @project.id %></p>
+    </div>
   </div>
 </div>
+
+<!-- Add this at the bottom of your show.html.erb -->
+<script>
+  console.log("show.html.erb loaded")
+  document.addEventListener("turbo:load", () => {
+    console.log("Turbo load event fired on show page")
+  })
+</script>

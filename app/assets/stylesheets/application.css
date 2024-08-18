@@ -17,13 +17,12 @@
 /* application.css */
 
 /* Application-wide styles */
-
 body {
   background-color: #f8f8f8 !important; /* Set the background color */
   margin: 0; /* Remove default margins */
   font-family: Arial, sans-serif; /* Optional: Set a consistent font family */
   padding-top: 56px; /* Adjust based on your navbar height */
-  padding: 56px 150px;
+  padding: 56px 150px; /* Padding for the body content */
 }
 
 .card {
@@ -47,4 +46,16 @@ body {
   margin-right: 0; /* Remove margin from the last link */
 }
 
+/* Active and hover styles for links */
+.nav-link {
+  position: relative; /* Required for the absolute positioning of the border */
+}
 
+.nav-link.active {
+  border-bottom: 1px solid #8b8b8b; /* Gray border when active */
+  padding-bottom: 0.5rem; /* Adjust padding to create space for the border */
+}
+
+.nav-link:hover {
+  border-bottom: 1px solid #8b8b8b; /* Optional: Add a border on hover */
+}

@@ -20,6 +20,7 @@
             <h5 class="card-title"><%= project.name %></h5>
             <p class="card-text"><%= truncate(project.description, length: 100) %></p>
             <p class="card-text"><strong>Status:</strong> <%= project.status %></p>
+            <p class="card-text"><strong>Mission Type:</strong> <%= project.mission_type %></p> <!-- Added Mission Type -->
             <div class="d-flex justify-content-between">
               <div class="btn-group" role="group" aria-label="Project actions">
                 <%= link_to 'View', project_path(project), class: 'btn btn-info btn-sm' %>

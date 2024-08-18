@@ -13,17 +13,17 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <!-- Links in the middle -->
       <ul class="navbar-nav mx-auto">
-        <li class="nav-item <%= 'active' if controller_name == 'dashboard' %>">
-          <%= link_to 'Dashboard', dashboard_index_path, class: 'nav-link' %>
+        <li class="nav-item">
+          <%= link_to 'Dashboard', dashboard_index_path, class: "nav-link #{ 'active' if controller_name == 'dashboard' }" %>
         </li>
-        <li class="nav-item <%= 'active' if controller_name == 'compliance' %>">
-          <%= link_to 'Compliance', compliance_index_path, class: 'nav-link' %>
+        <li class="nav-item">
+          <%= link_to 'Compliance', compliance_index_path, class: "nav-link #{ 'active' if controller_name == 'compliance' }" %>
         </li>
-        <li class="nav-item <%= 'active' if controller_name == 'lms' %>">
-          <%= link_to 'LMS', lms_index_path, class: 'nav-link' %>
+        <li class="nav-item">
+          <%= link_to 'LMS', lms_index_path, class: "nav-link #{ 'active' if controller_name == 'lms' }" %>
         </li>
-        <li class="nav-item <%= 'active' if controller_name == 'projects' %>">
-          <%= link_to 'Projects', projects_path, class: 'nav-link' %>
+        <li class="nav-item">
+          <%= link_to 'Projects', projects_path, class: "nav-link #{ 'active' if controller_name == 'projects' }" %>
         </li>
       </ul>
 
@@ -56,4 +56,3 @@
 </nav>
 
 <%= javascript_importmap_tags %>
-
