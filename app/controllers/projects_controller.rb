@@ -7,6 +7,19 @@ class ProjectsController < ApplicationController
   end
 
   def show
+    @project = Project.find(params[:id])
+    @active_section = params[:section] || 'bookings' # Set default section if none is provided
+
+    if valid_section?(@active_section)
+      @section_content = render_to_string(partial: "projects/sections/#{@active_section}", layout: false)
+    else
+      @section_content = "<p>Invalid section requested.</p>" # Fallback content
+    end
+
+    respond_to do |format|
+      format.html # This will render the show.html.erb view
+      format.js   # This allows for AJAX requests to this action
+    end
   end
 
   def new
@@ -34,7 +47,6 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_path, notice: 'Project was successfully deleted.'
   end
@@ -42,11 +54,15 @@ class ProjectsController < ApplicationController
   def load_section
     @section = params[:section]
 
-    respond_to do |format|
-      format.js # This will render load_section.js.erb
-      # render partial: "projects/#{@section}"
+    if valid_section?(@section)
+      Rails.logger.info "Loading section: #{@section}"
+      render turbo_stream: turbo_stream.replace("section-content", partial: "projects/sections/#{@section}")
+    else
+      Rails.logger.warn "Invalid section requested: #{@section}"
+      render turbo_stream: turbo_stream.replace("section-content", partial: "shared/error_message", locals: { message: "Invalid section requested." })
     end
   end
+
 
   private
 
@@ -55,6 +71,10 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:name, :description, :start_date, :end_date, :status)
+    params.require(:project).permit(:name, :description, :start_date, :end_date, :status, :mission_type)
+  end
+
+  def valid_section?(section)
+    %w[bookings records crew compliance].include?(section) # Valid sections defined here
   end
 end

@@ -1,67 +1,134 @@
-<%# Add this line at the top of the file %>
-<%= stylesheet_link_tag "dashboard", "data-turbo-track": "reload" %>
-
-<div class="container mt-4 pb-5">
-  <h1 class="display-4 text-center">Dashboard</h1>
+<div class="container mt-1 pb-5">
+  <h3 class="display-5 text-center">Dashboard</h3>
   <p class="lead text-center">Overview of key metrics and activities.</p>
 
-  <div class="row mt-4 g-4">
-    <div class="col-12 col-md-4 d-flex justify-content-center">
-      <div class="card w-100 project-card shadow-sm border-light"> <!-- Added border-light -->
-        <div class="card-body p-card">
-          <h5 class="card-title">Active Projects</h5>
-          <p class="card-text">You have <strong>3 active projects</strong> currently ongoing.</p>
-          <%= link_to 'View Projects', projects_path, class: 'btn btn-success' %>
+  <div class="row mt-4">
+    <!-- Main Content Area -->
+    <div class="col-12 col-md-8">
+      <div class="row g-4">
+        <div class="col-12 col-md-4 d-flex">
+          <div class="card w-100 project-card shadow-sm border-light flex-fill mb-4">
+            <div class="card-body d-flex flex-column">
+              <div>
+                <h5 class="card-title">Active Projects</h5>
+                <p class="card-text">You have <strong>3 active projects</strong> </p>
+              </div>
+              <%= link_to 'View Projects', projects_path, class: 'btn btn-secondary mt-4' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 d-flex">
+          <div class="card w-100 project-card shadow-sm border-light flex-fill mb-4">
+            <div class="card-body d-flex flex-column">
+              <div>
+                <h5 class="card-title">Upcoming Deadlines</h5>
+                <p class="card-text">You have <strong>2 upcoming deadlines</strong> this week.</p>
+              </div>
+              <%= link_to 'Check Deadlines', '#', class: 'btn btn-secondary mt-4' %>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4 d-flex">
+          <div class="card w-100 project-card shadow-sm border-light flex-fill mb-4">
+            <div class="card-body d-flex flex-column">
+              <div>
+                <h5 class="card-title">Total Flight Hours</h5>
+                <p class="card-text">You have logged a total of <strong class='text-success'>+120 flight hours</strong>.</p>
+              </div>
+              <%= link_to 'View Logbook', '#', class: 'btn btn-secondary mt-4' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card w-100 project-card shadow-sm border-light mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Recent Activities</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Project Alpha updated on 2024-08-01</li>
+                <li class="list-group-item">Flight operation completed on 2024-08-02</li>
+                <li class="list-group-item">New project created: Project Beta on 2024-08-03</li>
+              </ul>
+              <%= link_to 'View All Activities', '#', class: 'btn btn-secondary mt-2' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card w-100 project-card shadow-sm border-light mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Team Collaboration</h5>
+              <p class="card-text">Engage with your team to enhance project outcomes. You have <strong>5 team members</strong> collaborating on current projects.</p>
+              <%= link_to 'View Team', '#', class: 'btn btn-secondary' %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4">
+        <div class="col-12">
+          <div class="card w-100 project-card shadow-sm border-light mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Project Statistics</h5>
+              <p class="card-text">Your projects are progressing well! <strong>75%</strong> of tasks are on schedule, and the team has completed <strong>90%</strong> of assigned duties.</p>
+              <%= link_to 'View Statistics', '#', class: 'btn btn-secondary' %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="col-12 col-md-4 d-flex justify-content-center">
-      <div class="card w-100 project-card shadow-sm border-light">
-        <div class="card-body p-card">
-          <h5 class="card-title">Upcoming Deadlines</h5>
-          <p class="card-text">You have <strong>2 upcoming deadlines</strong> this week.</p>
-          <%= link_to 'Check Deadlines', '#', class: 'btn btn-warning' %>
+    <!-- Sidebar for User Profile and Quick Links -->
+    <div class="col-12 col-md-4 position-sticky" style="top: 1rem;">
+      <div class="d-flex flex-column">
+        <!-- User Profile Card -->
+        <div class="card w-60 mb-4 project-card shadow-sm border-light">
+          <div class="card-body text-center">
+            <img src="<%= asset_path('user-placeholder.png') %>" alt="User Profile Picture" class="rounded-circle" style="width: 80px; height: 80px;">
+            <h5 class="card-title mt-3">Duzu Abdulraheem Mohd</h5>
+            <p class="card-text">Position: RPAS</p>
+            <p class="card-text">Employment Status: Active</p>
+            <p class="card-text">Contract Type: Permanent</p>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="col-12 col-md-4 d-flex justify-content-center">
-      <div class="card w-100 project-card shadow-sm border-light">
-        <div class="card-body p-card">
-          <h5 class="card-title">Total Flight Hours</h5>
-          <p class="card-text">You have logged a total of <strong class='text-success'>+120 flight hours</strong>.</p>
-          <%= link_to 'View Logbook', '#', class: 'btn btn-outline-primary' %>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="row mt-4 g-4">
-    <div class="col-12 col-md-4 d-flex justify-content-center">
-      <div class="card w-100 project-card shadow-sm border-light">
-        <div class="card-body">
-          <h5 class="card-title">Recent Activities</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item p-card">Project Alpha updated on 2024-08-01</li>
-            <li class="list-group-item p-card">Flight operation completed on 2024-08-02</li>
-            <li class="list-group-item p-card">New project created: Project Beta on 2024-08-03</li>
-          </ul>
-          <%= link_to 'View All Activities', '#', class: 'btn btn-outline-primary mt-2' %>
-        </div>
-      </div>
-    </div>
-
-    <div class="col-12 col-md-4 d-flex justify-content-center">
-      <div class="card w-100 project-card shadow-sm border-light">
-        <div class="card-body">
-          <h5 class="card-title">Recent Activities</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item p-card">Project Alpha updated on 2024-08-01</li>
-            <li class="list-group-item p-card">Flight operation completed on 2024-08-02</li>
-            <li class="list-group-item p-card">New project created: Project Beta on 2024-08-03</li>
-          </ul>
-          <%= link_to 'View All Activities', '#', class: 'btn btn-outline-primary mt-2' %>
+        <!-- Quick Links -->
+        <div class="card w-60 project-card shadow-sm border-light mb-4">
+          <div class="card-body">
+            <h5 class="card-title">Quick Links</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                <%= link_to 'Flight Log', '#', class: 'text-decoration-none' %>
+              </li>
+              <li class="list-group-item">
+                <%= link_to 'Maintenance Log', '#', class: 'text-decoration-none' %>
+              </li>
+              <li class="list-group-item">
+                <%= link_to 'Reports', '#', class: 'text-decoration-none' %>
+              </li>
+              <li class="list-group-item">
+                <%= link_to 'NOTAMS', '#', class: 'text-decoration-none' %>
+              </li>
+              <li class="list-group-item">
+                <%= link_to 'Emergency Response Plan', '#', class: 'text-decoration-none' %>
+              </li>
+              <li class="list-group-item">
+                <%= link_to 'Training Resources', '#', class: 'text-decoration-none' %>
+              </li>
+              <li class="list-group-item">
+                <%= link_to 'Regulatory Approvals', '#', class: 'text-decoration-none' %>
+              </li>
+              <li class="list-group-item">
+                <%= link_to 'Safety Management System', '#', class: 'text-decoration-none' %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

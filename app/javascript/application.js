@@ -1,10 +1,12 @@
 // app/javascript/application.js
-import "./projects"; // Import the projects.js file
-import "@hotwired/turbo-rails";
-import "controllers";
-import Rails from "@rails/ujs";
-import "bootstrap"; // Import Bootstrap JS here
+import "@hotwired/turbo-rails"
+import { Application } from "@hotwired/stimulus"
+import ProjectSectionController from "./controllers/project_section_controller"
 
+// Start Stimulus application
+window.Stimulus = Application.start()
 
-// Start Rails UJS
-Rails.start();
+// Register the ProjectSectionController
+Stimulus.register("project-section", ProjectSectionController)
+
+console.log("application.js loaded")
